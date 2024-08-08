@@ -10,7 +10,7 @@ if __name__ == "__main__":
     processes = []
     
     for service in services:
-        process = subprocess.Popen(["python", service])
+        process = subprocess.Popen(["python3", service])
         processes.append(process)
     
     for process in processes:

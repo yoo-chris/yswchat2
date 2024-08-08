@@ -37,10 +37,10 @@ def get_chats():
         chats = mongo.db.chats.find().sort('timestamp')
         return jsonify([{
             'username': chat['username'],
-            'msg': chat['message'],
-            'timestamp': chat['timestamp'].strftime('%Y-%m-%d %H:%M:%S'),
-            'is_offensive': chat['is_offensive'],
-            'offensive_score': chat['offensive_score']
+            'msg': chat['message']
+            #'timestamp': chat['timestamp'].strftime('%Y-%m-%d %H:%M:%S'),
+            #'is_offensive': chat['is_offensive'],
+            #'offensive_score': chat['offensive_score']
         } for chat in chats])
     except Exception as e:
         return jsonify({'error': str(e)}), 500

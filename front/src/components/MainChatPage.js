@@ -3,7 +3,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 import './MainChatPage.css'; // CSS 스타일링을 위한 파일
 
-const socket = io('http://localhost:5000'); // Flask 서버 주소
+const socket = io('http://211.183.3.100:5000'); // Flask 서버 주소
 
 const MainChatPage = ({ username }) => {
   const [message, setMessage] = useState('');
@@ -14,7 +14,7 @@ const MainChatPage = ({ username }) => {
     // 이전 채팅 메시지 로드
     const fetchChats = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/get_chats');
+        const response = await axios.get('http://211.183.3.100:5000/api/get_chats');
         setChats(response.data);
       } catch (error) {
         console.error('Error fetching chats:', error);

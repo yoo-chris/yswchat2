@@ -7,7 +7,6 @@ import datetime
 
 from random import random
 from time import sleep
-from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
 CORS(app)
@@ -22,9 +21,6 @@ app.config['MYSQL_DB'] = 'login'
 app.config['JWT_SECRET_KEY'] = 'yswchat'  
 mysql = MySQL(app)
 jwt = JWTManager(app)
-
-#메트릭
-metrics = PrometheusMetrics(app)
 
 # 로그인
 @app.route('/signin', methods=['POST'])
@@ -65,4 +61,4 @@ def logout():
     return jsonify({"msg": "Logged out successfully"}), 200
 
 if __name__ == '__main__':
-    app.run(port=5012)
+    app.run(host='0.0.0.0', port=5012)
