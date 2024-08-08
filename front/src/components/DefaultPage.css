@@ -1,0 +1,94 @@
+/* 전체 페이지 레이아웃 */
+.default-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vh;
+  background-color: #f0f2f5;
+}
+
+/* 콘텐츠 박스 */
+.content {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 메인 제목 스타일 */
+h1 {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+/* 로그인 버튼 스타일 */
+.btn-login {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #0056b3;
+}
+
+/* 로그아웃 버튼 스타일 */
+button {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c82333;
+}
+
+/* 채팅 버튼 스타일 */
+.btn-chat {
+  background-color: #28a745; /* 초록색 배경 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-left: 0.5rem; /* 다른 버튼과의 간격 추가 */
+}
+
+.btn-chat:hover {
+  background-color: #218838; /* 초록색 배경의 어두운 버전 */
+}
+
+/* Admin 페이지로 가는 버튼 스타일 */
+.btn-admin {
+  background-color: #ffc107; /* 노란색 배경 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-left: 0.5rem; /* 다른 버튼과의 간격 추가 */
+}
+
+.btn-admin:hover {
+  background-color: #e0a800; /* 노란색 배경의 어두운 버전 */
+}
