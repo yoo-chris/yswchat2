@@ -10,7 +10,7 @@ const AdminPage = () => {
     const handleSearch = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.get(`http://localhost:5000/api/get_user_chats/${username}`);
+            const response = await axios.get(`http://211.183.3.100:5000/api/get_user_chats/${username}`);
             setChats(response.data);
             setError('');
         } catch (error) {

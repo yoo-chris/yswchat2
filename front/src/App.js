@@ -35,7 +35,7 @@ function App() {
         setToken(token);
 
         try {
-          const response = await axios.get('http://localhost:5012/protected', {
+          const response = await axios.get('http://211.183.3.100:5012/protected', {
             headers: {
               'Authorization': `Bearer ${token}`
             }
