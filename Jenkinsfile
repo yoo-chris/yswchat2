@@ -13,7 +13,7 @@ pipeline {
             }
         }
 
-        stage('Front Build & Push') {
+        stage('Project Build & Push') {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
@@ -21,6 +21,15 @@ pipeline {
                             echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
                             docker build -t ${IMAGE_NAME}:front ./front
                             docker push ${IMAGE_NAME}:front
+
+                            docker build -t ${IMAGE_NAME}:chat ./server/chat
+                            docker push ${IMAGE_NAME}:chat
+
+                            docker build -t ${IMAGE_NAME}:signin ./server/signin
+                            docker push ${IMAGE_NAME}:signin
+
+                            docker build -t ${IMAGE_NAME}:signup ./server/signup
+                            docker push ${IMAGE_NAME}:signup
                         '''
                     }
                 }
