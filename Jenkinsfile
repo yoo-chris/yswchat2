@@ -3,7 +3,7 @@ pipeline {
 
     environment {
     IMAGE_NAME = 'chris4929/yswchat'
-    DOCKERHUB_CREDENTIALS = 'dockerhub-id'
+    DOCKERHUB_CREDENTIALS = 'dockerhub-credential'
 }
 
     stages {
@@ -16,7 +16,7 @@ pipeline {
         stage('Front Build & Push') {
             steps {
                 script {
-                    docker.withRegistry('', dockerhub-credential) {
+                    docker.withRegistry('', DOCKERHUB_CREDENTIALS) {
                         sh 'docker build -t $IMAGE_NAME:front ./front'
                         sh 'docker push $IMAGE_NAME:front'
                     }
