@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-    IMAGE_NAME = 'chris4929/yswchat'
-    DOCKERHUB_CREDENTIALS = 'dockerhub-credential'
-}
+        IMAGE_NAME = 'chris4929/yswchat'
+        DOCKERHUB_CREDENTIALS = 'dockerhub-credential'
+    }
 
     stages {
         stage('Clone') {
