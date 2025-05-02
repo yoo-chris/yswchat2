@@ -82,20 +82,22 @@ button {
     background-size: cover; /* 이미지 커버 */
 }
 
+/*
 .social-btn.google {
     background-color: #ffffff;
-    background-image: url('/build/google.png');
+    background-image: url('/yswchat2/front/build/google.png');
 }
 
 .social-btn.kakao {
     background-color: #ffffff;
-    background-image: url('/build/KAKAO.png');
+    background-image: url('/yswchat2/front/build/KAKAO.png');
 }
 
 .social-btn.naver {
     background-color: #ffffff;
-    background-image: url('/build/NAVER1.png');
+    background-image: url('/yswchat2/front/build/NAVER.png');
 }
+*/
 
 p {
     font-size: 10px;
