@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Clone') {
             steps {
-                git branch: 'main', url: 'https://github.com/yoo-chris/yswchat2.git'
+                git branch: 'main', url: 'https://github.com/yoo-chris/yswchat2.git', credentialsId: 'github-credentials-id'
             }
         }
     }
