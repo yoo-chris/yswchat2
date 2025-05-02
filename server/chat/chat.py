@@ -90,7 +90,7 @@ def handle_message(data):
         # 현재 시간을 가져와서 ISO 포맷으로 변환
         timestamp = datetime.utcnow()
 
-        # 메시지를 MongoDB에 저장
+        # 메시지를 MongoDB에 저장 test
         mongo.db.chats.insert_one({
             'username': username,
             'message': data['msg'],
