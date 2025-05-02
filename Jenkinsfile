@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'chris4929/yswchat'
-        DOCKERHUB_CREDENTIALS = 'dockerhub-credential'
+        DOCKERHUB_CREDENTIALS = 'dockerhub-credential'  // Jenkins에 등록한 DockerHub 자격증명 ID
     }
 
     stages {
@@ -16,9 +16,12 @@ pipeline {
         stage('Front Build & Push') {
             steps {
                 script {
-                    docker.withRegistry('', DOCKERHUB_CREDENTIALS) {
-                        sh 'docker build -t $IMAGE_NAME:front ./front'
-                        sh 'docker push $IMAGE_NAME:front'
+                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        sh '''
+                            echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                            docker build -t ${IMAGE_NAME}:front ./front
+                            docker push ${IMAGE_NAME}:front
+                        '''
                     }
                 }
             }
